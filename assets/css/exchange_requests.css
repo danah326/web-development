@@ -1,0 +1,92 @@
+body { font-family: Arial, sans-serif; background: #f8f6f2; color: #2d2d2d; display: flex; flex-direction: column; min-height: 100vh; }
+
+.page-wrap {
+    display: flex; flex-direction: row; gap: 24px;
+    width: 100%; max-width: 1200px; margin: 32px auto;
+    padding: 0 24px; box-sizing: border-box; flex: 1; align-items: flex-start;
+}
+
+.section-container {
+    flex: 1; min-width: 0; background: #f5f0e8;
+    border: 1px solid #ddd3c0; border-radius: 14px;
+    padding: 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+.section-label {
+    display: block; font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.07em; color: #4a8b8b;
+    margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid #ddd3c0;
+}
+
+.request-card {
+    background: #ece4d6; border: 1px solid #ddd3c0;
+    border-radius: 10px; padding: 16px; margin-bottom: 12px;
+}
+
+/* Both books same width + centered */
+.books-pair {
+    display: flex; gap: 14px; justify-content: center;
+    margin-bottom: 14px;
+}
+
+.book-card {
+    background: #fff; border: 1px solid #ddd8d0; border-radius: 10px;
+    padding: 12px; display: flex; flex-direction: column;
+    align-items: center; text-align: center;
+    width: 140px; flex-shrink: 0;
+}
+.my-book   { border: 2px solid #4a8b8b; background: #f0fafa; }
+.their-book{ border: 1px solid #ddd8d0; background: #fff; }
+
+.book-owner-tag {
+    display: inline-block; font-size: 10px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.06em;
+    padding: 2px 8px; border-radius: 4px; margin-bottom: 6px;
+}
+.my-tag { background: #d8f0f0; color: #3a7070; }
+
+/* Consistent layout: avatar always on top, same size, centered */
+.owner-avatar {
+    width: 32px; height: 32px; border-radius: 50%;
+    border: 2px solid #ddd3c0; object-fit: cover;
+    margin-bottom: 8px; display: block;
+}
+.book-cover {
+    width: 110px; height: 154px; object-fit: cover;
+    border-radius: 6px; margin-bottom: 8px; display: block;
+}
+
+.book-title { font-size: 12px; font-weight: 500; color: #2d2d2d; margin-bottom: 3px; width: 100%; word-break: break-word; }
+.book-price { font-size: 12px; font-weight: 600; color: #4a8b8b; margin: 2px 0; }
+.book-category { font-size: 11px; color: #aaa; }
+.book-description { font-size: 11px; color: #666; line-height: 1.4; margin-top: 2px; }
+
+/* Actions: radios in a row, submit button on its own row BELOW */
+.request-actions {
+    display: flex; flex-direction: column; align-items: center;
+    gap: 10px; padding-top: 12px; border-top: 1px solid #ddd3c0;
+}
+.radio-group { display: flex; gap: 20px; }
+.radio-label { display: flex; align-items: center; gap: 5px; font-size: 14px; font-weight: 500; cursor: pointer; }
+.radio-label input { accent-color: #4a8b8b; width: 15px; height: 15px; }
+
+/* Submit on its own row */
+.submit-row { width: 100%; display: flex; justify-content: center; }
+.btn-submit {
+    background: #4a8b8b; color: #fff; border: none;
+    border-radius: 8px; padding: 9px 32px;
+    font-size: 14px; font-weight: 500; cursor: pointer; transition: background 0.2s;
+}
+.btn-submit:hover { background: #3a7070; }
+
+/* Status badge centered under books in sent section */
+.request-status-wrap { text-align: center; padding-top: 12px; border-top: 1px solid #ddd3c0; }
+.status-badge { display: inline-block; padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: 500; }
+.status-pending  { background: #fef3e2; color: #b07800; border: 1px solid #f5d08a; }
+.status-accepted { background: #e8f5e9; color: #2e7d32; border: 1px solid #a5d6a7; }
+.status-rejected { background: #fef2f2; color: #b94040; border: 1px solid #fca5a5; }
+.status-completed{ background: #e8f4fd; color: #1565c0; border: 1px solid #90caf9; }
+
+.empty-msg { text-align: center; color: #aaa; font-size: 14px; padding: 28px 0; }
+
+@media (max-width: 800px) { .page-wrap { flex-direction: column; } }

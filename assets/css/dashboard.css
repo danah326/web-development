@@ -1,0 +1,95 @@
+body { font-family: Arial, sans-serif; background: #f8f6f2; color: #2d2d2d; display: flex; flex-direction: column; min-height: 100vh; }
+
+/* Welcome bar */
+.welcome-bar { background: #f8f6f2; padding: 20px 32px 0; }
+.welcome-inner { max-width: 1400px; margin: 0 auto; }
+.welcome-text { display: flex; flex-direction: column; gap: 4px; }
+.welcome-greeting { font-size: 22px; font-weight: 600; color: #2d2d2d; }
+.welcome-sub { font-size: 14px; color: #888; }
+
+/* Carousel */
+.carousel { position: relative; overflow: hidden; margin: 20px 32px 28px; border-radius: 14px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+.carousel-track { display: flex; transition: transform 0.5s ease; }
+.carousel-slide {
+    min-width: 100%; height: 240px; display: flex; align-items: center;
+    justify-content: flex-start; padding: 40px 60px;
+}
+.slide-content { max-width: 560px; }
+.slide-content h2 { font-size: 26px; font-weight: 600; color: #2d2d2d; margin-bottom: 12px; }
+.slide-content p { font-size: 15px; color: #555; line-height: 1.7; }
+
+.carousel-btn {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(255,255,255,0.75); border: none; border-radius: 50%;
+    width: 40px; height: 40px; font-size: 22px; cursor: pointer;
+    transition: background 0.2s; z-index: 2;
+}
+.carousel-btn:hover { background: rgba(255,255,255,0.97); }
+.carousel-btn.prev { left: 14px; }
+.carousel-btn.next { right: 14px; }
+.carousel-dots { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(45,45,45,0.2); cursor: pointer; transition: background 0.2s; }
+.dot.active { background: rgba(45,45,45,0.6); }
+
+/* Container + search */
+.container { max-width: 1400px; margin: 0 auto; padding: 0 32px 40px; flex: 1; }
+.Search-Filter { display: flex; justify-content: center; gap: 14px; margin-bottom: 24px; }
+.search-bar, .filter {
+    padding: 11px 16px; border: 1px solid #ddd3c0; border-radius: 8px;
+    font-size: 15px; color: #2d2d2d; background: #fff; outline: none; transition: border-color 0.2s;
+}
+.search-bar { width: 300px; }
+.filter { width: 180px; }
+.search-bar:focus, .filter:focus { border-color: #4a8b8b; }
+
+/* Book grid — 4 per row */
+.books-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 1100px) { .books-container { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 780px)  { .books-container { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px)  { .books-container { grid-template-columns: 1fr; } }
+
+.book-card {
+    background: #fff; border: 1px solid #ddd8d0; border-radius: 12px;
+    padding: 14px; display: flex; flex-direction: column; align-items: center;
+    text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.book-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.10); transform: translateY(-2px); }
+
+.card-owner { width: 100%; display: flex; justify-content: flex-start; margin-bottom: 8px; }
+.owner-avatar { width: 32px; height: 32px; border-radius: 50%; border: 2px solid #ddd3c0; object-fit: cover; }
+
+.book-cover { width: 100px; height: 140px; object-fit: cover; border-radius: 6px; margin-bottom: 10px; }
+.book-title { font-size: 14px; font-weight: 500; color: #2d2d2d; margin-bottom: 4px; width: 100%; }
+.book-price { font-size: 14px; font-weight: 600; color: #4a8b8b; margin: 3px 0; }
+.book-category { font-size: 12px; color: #aaa; margin-bottom: 4px; }
+.book-description { font-size: 12px; color: #666; line-height: 1.5; margin-bottom: 10px; flex: 1; }
+
+.card-actions { display: flex; flex-direction: column; gap: 7px; width: 100%; margin-top: auto; }
+.btn-buy {
+    display: block; background: #c4714a; color: #fff;
+    padding: 8px; border-radius: 8px; text-decoration: none;
+    font-size: 13px; font-weight: 500; transition: background 0.2s; text-align: center;
+}
+.btn-buy:hover { background: #a85a38; }
+.btn-exchange {
+    display: block; background: #4a8b8b; color: #fff;
+    padding: 8px; border-radius: 8px; text-decoration: none;
+    font-size: 13px; font-weight: 500; transition: background 0.2s; text-align: center;
+}
+.btn-exchange:hover { background: #3a7070; }
+
+/* Empty state */
+.empty-title { font-size: 18px; font-weight: 500; color: #2d2d2d; margin-bottom: 8px; }
+.empty-sub { font-size: 14px; color: #888; }
+
+@media (max-width: 600px) {
+    .carousel { margin: 12px 16px 16px; }
+    .carousel-slide { padding: 24px 28px; height: auto; min-height: 180px; }
+    .container { padding: 0 16px 32px; }
+}
